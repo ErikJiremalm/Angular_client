@@ -1,0 +1,55 @@
+<div *ngIf="monster">
+
+    <h2>{{monster.name}}</h2>
+    <table class="table" style="max-width: 25%;">
+        <tr>
+            <td>
+                <label>Name:</label>
+            </td>
+            <td>
+                <input [(ngModel)]="monster.name" placeholder="name"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Hp:</label>
+            </td>
+            <td>
+                <input [(ngModel)]="monster.hp" placeholder="hp"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Ac:</label>
+            </td>
+            <td>
+                <input [(ngModel)]="monster.ac" placeholder="ac"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Cr:</label>
+            </td>
+            <td>
+                <input [(ngModel)]="monster.cr" placeholder="cr"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Movment speed:</label>
+            </td>
+            <td>
+                <input [(ngModel)]="monster.movment_speed" placeholder="Movment speed"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button (click)="updateMonster(monster)" *ngIf="monster.id" class="btn btn-primary">update</button>
+                <button (click)="createMonster(monster)" *ngIf="!monster.id" class="btn btn-primary">Create</button>
+            </td>
+            <td>
+                <button (click)="deleteMonster(monster)" *ngIf="monster.id" class="btn btn-primary">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
